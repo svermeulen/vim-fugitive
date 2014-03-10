@@ -173,8 +173,8 @@ function! fugitive#detect(path)
   endif
   if exists('b:git_dir')
     silent doautocmd User FugitiveBoot
-    cnoremap <buffer> <expr> <C-R><C-G> fnameescape(<SID>recall())
-    nnoremap <buffer> <silent> y<C-G> :call setreg(v:register, <SID>recall())<CR>
+    "cnoremap <buffer> <expr> <C-R><C-G> fnameescape(<SID>recall())
+    "nnoremap <buffer> <silent> y<C-G> :call setreg(v:register, <SID>recall())<CR>
     let buffer = fugitive#buffer()
     if expand('%:p') =~# '//'
       call buffer.setvar('&path', s:sub(buffer.getvar('&path'), '^\.%(,|$)', ''))
